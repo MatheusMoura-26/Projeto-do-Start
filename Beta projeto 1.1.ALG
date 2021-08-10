@@ -65,19 +65,19 @@ resp <- "SIM"
          caso 1
             Escreval("Digite a quantidade em gramas de queijo prato você deseja:")
             leia(quant)
-            total <- total + (quant * 25.30)
+            total <- total + ((quant /1000) * 25.30)
          caso 2
             Escreval("Digite a quantidade em gramas de Queijo Coalho você deseja:")
             leia(quant)
-            total <- total + (quant * 24.50)
+            total <- total + ((quant /1000)* 24.50)
          caso 3
             Escreval("Digite a quantidade em gramas de queijo mussarela você deseja:")
             leia(quant)
-            total <- total + (quant * 27.10)
+            total <- total + ((quant /1000)* 27.10)
          caso 4
             Escreval("Digite a quantidade em gramas em queijo parmesão você deseja:")
             leia(quant)
-            total <- total + (quant * 28.50)
+            total <- total + (quant /1000)* 28.50)
          outrocaso
             Escreval("Talvez você tenha digitado errado.")
             Escreval("Valor inválido.")
@@ -95,15 +95,15 @@ resp <- "SIM"
          caso 1
             Escreval("Digite a quantidade em gramas de Presunto Sadia você deseja:")
             leia(quant)
-            total <- total + (quant * 27.30)
+            total <- total + ((quant / 1000)* 27.30)
          caso 2
             Escreval(o"Digite a quantidade em gramas de presunto Perdigão você deseja:")
             leia(quant)
-            total <- total + (quant * 26.90)
+            total <- total + ((quant / 1000 )* 26.90)
          caso 3
             Escreval("Digite a quantidade em gramas de Presunto Seara você deseja:")
             leia(quant)
-            total <- total + (quant * 26.50)
+            total <- total + ((quant / 1000)* 26.50)
          outrocaso
             Escreval("Talvez você tenha digitado errado.")
             Escreval("Valor inválido.")
@@ -189,5 +189,5 @@ resp <- "SIM"
       Escreval("Caso não digite não:")
       leia(resp)
    fimenquanto
-   Escreval("O total da compra foi: RS", total:4:3)
+   Escreval("O total da compra foi: RS", total:4:2)
  Fimalgoritmo
