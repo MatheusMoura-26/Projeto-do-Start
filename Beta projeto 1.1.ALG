@@ -4,7 +4,7 @@
 Var
    resp :caractere
    total, quant : real
-   esc1, esc2: inteiro
+   esc1, esc2, esc3: inteiro
 Inicio
 resp <- "SIM"
    Escreval("==================================================")
@@ -21,6 +21,7 @@ resp <- "SIM"
       leia(esc1)
       escolha (esc1)
       caso 1
+         limpatela
          //menu secundario para seleção do tipo DO PRODUTO CASO SEJA PÃO.
          Escreval("=============================================================")
          Escreval("--------------------------PÃES-------------------------------")
@@ -52,6 +53,7 @@ resp <- "SIM"
             Escreval("Valor inválido.")
          fimescolha
       caso 2
+         limpatela
          //menu secundario para seleção do tipo do produto CASO SEJA QUEIJO.
          Escreval("=============================================================")
          Escreval("--------------------------PÃES-------------------------------")
@@ -83,6 +85,7 @@ resp <- "SIM"
             Escreval("Valor inválido.")
          fimescolha
       caso 3
+         limpatela
          //menu secundario para seleção do tipo do produto CASO SEJA Presunto.
          Escreval("=============================================================")
          Escreval("--------------------------PÃES-------------------------------")
@@ -109,6 +112,7 @@ resp <- "SIM"
             Escreval("Valor inválido.")
          fimescolha
       caso 4
+         limpatela
          //menu secundario para seleção do tipo do produto CASO SEJA Bolacha.
          Escreval("=============================================================")
          Escreval("--------------------------PÃES-------------------------------")
@@ -140,6 +144,7 @@ resp <- "SIM"
             Escreval("Valor inválido.")
          fimescolha
       caso 5
+         limpatela
          //menu secundario para seleção do tipo do produto CASO SEJA torta.
          Escreval("=============================================================")
          Escreval("--------------------------PÃES-------------------------------")
@@ -161,6 +166,7 @@ resp <- "SIM"
             Escreval("Valor inválido.")
          fimescolha
       caso 6
+         limpatela
          //menu secundario para seleção do tipo do produto CASO SEJA Outros.
          Escreval("=============================================================")
          Escreval("--------------------------PÃES-------------------------------")
@@ -189,5 +195,24 @@ resp <- "SIM"
       Escreval("Caso não digite não:")
       leia(resp)
    fimenquanto
+   limpatela
    Escreval("O total da compra foi: RS", total:4:2)
+   Escreval("====================FORMA DE PAGAMENTO===============")
+   Escreval("DIGITE[1] CASO A FORMA DE PAGAMENTO SEJA CARTÃO DE CRÉDITO.")
+   Escreval("DIGITE[2] CASO A FORMA DE PAGAMENTO SEJA CARTÃO DE DÉBITO.")
+   Escreval("DIGITE[3] CASO A FORMA DE PAGAMENTO SEJA PIX.")
+   Escreval("DIGITE[4] CASO A FORMA DE PAGAMENTO SEJA À VISTA.")
+   leia(esc3)
+   escolha (esc3)
+   caso 1
+         Escreval("TOTAL: R$",total, " Pagar no cartão de crédito:")
+   caso 2
+         Escreval("TOTAL: R$",total, " Pagar no cartão de débito:")
+   caso 3
+         Escreval("TOTAL: R$",total, " Transferir valor via pix:")
+   caso 4
+         Escreval("TOTAL: R$",total, " Pagar em dinheiro a vista:")
+   outrocaso
+         Escreval("Opção inválida:")
+   fimescolha
  Fimalgoritmo
