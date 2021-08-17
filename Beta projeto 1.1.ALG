@@ -1,15 +1,22 @@
     Algoritmo "Projeto beta"
 // Autor(a)    : Matheus Augusto De Moura
 // Data atual  : 08/08/2021
+tipo
+nota_Fiscal=registro
+produto: caractere
+preco:real
+fimregistro
 Var
    resp :caractere
    total, quant : real
-   esc1, esc2, esc3: inteiro
+   esc1, esc2, esc3,i,cont: inteiro
+   vet:vetor[1..3] de nota_Fiscal
 Inicio
 resp <- "SIM"
+i <- 1
    Escreval("==================================================")
    Escreval("-----------------Seja bem vindo!------------------")
-   Enquanto (resp = "SIM") ou (resp = "sim") ou (resp = "s") ou (resp ="s") faca
+   Enquanto (resp = "SIM") ou (resp = "sim") ou (resp = "s") ou (resp ="s") ou (i <=3 )faca
    limpatela
       // Menu inicial para seleção do produto
       Escreval("DIGITE [1] CASO DESEJE COMPRAR PÃO.")
@@ -35,18 +42,26 @@ resp <- "SIM"
          caso 1
             Escreval("Digite a quantidade de pães franceses você deseja:")
             leia(quant)
+            vet[i].produto <- "Pão francês"
+            vet[i].preco <- quant * 0.15
             total <- total + (quant * 0.15)
          caso 2
             Escreval("Digite a quantidade de pães integrais você deseja:")
             leia(quant)
+            vet[i].produto <- "Pão Integral"
+            vet[i].preco <- quant * 0.18
             total <- total + (quant * 0.18)
          caso 3
             Escreval("Digite a quantidade de pães doce que você deseja:")
             leia(quant)
+            vet[i].produto <- "Pão doce"
+            vet[i].preco <- quant * 0.40
             total <- total + (quant * 0.40)
          caso 4
             Escreval("Digite a quantidade de pacotes  de pão de forma você deseja:")
             leia(quant)
+            vet[i].produto <- "Pão de Forma"
+            vet[i].preco <- quant * 4
             total <- total + (quant * 4)
          outrocaso
             Escreval("Talvez você tenha digitado errado.")
@@ -56,7 +71,7 @@ resp <- "SIM"
          limpatela
          //menu secundario para seleção do tipo do produto CASO SEJA QUEIJO.
          Escreval("=============================================================")
-         Escreval("--------------------------PÃES-------------------------------")
+         Escreval("--------------------------QUEIJOS-------------------------------")
          Escreval("DIGITE [1] CASO DESEJE COMPRAR QUEIJO PRATO.")
          Escreval("DIGITE [2] CASO DESEJE COMPRAR QUIEJO COALHO.")
          Escreval("DIGITE [3] CASO DESEJE COMPRAR QUEIJO MUSSARELA .")
@@ -67,18 +82,26 @@ resp <- "SIM"
          caso 1
             Escreval("Digite a quantidade em gramas de queijo prato você deseja:")
             leia(quant)
+            vet[i].produto <- "Queijo Prato"
+            vet[i].preco <- (quant /1000) * 25.30
             total <- total + ((quant /1000) * 25.30)
          caso 2
             Escreval("Digite a quantidade em gramas de Queijo Coalho você deseja:")
             leia(quant)
+            vet[i].produto <- "Queijo Coalho"
+            vet[i].preco <- (quant /1000) * 24.50
             total <- total + ((quant /1000)* 24.50)
          caso 3
             Escreval("Digite a quantidade em gramas de queijo mussarela você deseja:")
             leia(quant)
+            vet[i].produto <- "Queijo Mussarela"
+            vet[i].preco <- (quant /1000) * 27.10
             total <- total + ((quant /1000)* 27.10)
          caso 4
             Escreval("Digite a quantidade em gramas em queijo parmesão você deseja:")
             leia(quant)
+            vet[i].produto <- "Queijo Parmesão"
+            vet[i].preco <- (quant /1000) * 28.50
             total <- total + (quant /1000)* 28.50)
          outrocaso
             Escreval("Talvez você tenha digitado errado.")
@@ -88,7 +111,7 @@ resp <- "SIM"
          limpatela
          //menu secundario para seleção do tipo do produto CASO SEJA Presunto.
          Escreval("=============================================================")
-         Escreval("--------------------------PÃES-------------------------------")
+         Escreval("-------------------------PRESUNTO------------------------------")
          Escreval("DIGITE [1] CASO DESEJE COMPRAR Presunto Sadia.")
          Escreval("DIGITE [2] CASO DESEJE COMPRAR Presunto perdigão.")
          Escreval("DIGITE [3] CASO DESEJE COMPRAR Presunto Seara.")
@@ -98,14 +121,20 @@ resp <- "SIM"
          caso 1
             Escreval("Digite a quantidade em gramas de Presunto Sadia você deseja:")
             leia(quant)
+            vet[i].produto <- "Presunto sadia"
+            vet[i].preco <- (quant /1000) * 27.30
             total <- total + ((quant / 1000)* 27.30)
          caso 2
             Escreval(o"Digite a quantidade em gramas de presunto Perdigão você deseja:")
             leia(quant)
+            vet[i].produto <- "Presunto Perdigão"
+            vet[i].preco <- (quant /1000) * 26.90
             total <- total + ((quant / 1000 )* 26.90)
          caso 3
             Escreval("Digite a quantidade em gramas de Presunto Seara você deseja:")
             leia(quant)
+            vet[i].produto <- "Presunto Seara"
+            vet[i].preco <- (quant /1000) * 26.50
             total <- total + ((quant / 1000)* 26.50)
          outrocaso
             Escreval("Talvez você tenha digitado errado.")
@@ -115,7 +144,7 @@ resp <- "SIM"
          limpatela
          //menu secundario para seleção do tipo do produto CASO SEJA Bolacha.
          Escreval("=============================================================")
-         Escreval("--------------------------PÃES-------------------------------")
+         Escreval("-------------------------Bolachas------------------------------")
          Escreval("DIGITE [1] CASO DESEJE COMPRAR Bolacha tradicional")
          Escreval("DIGITE [2] CASO DESEJE COMPRAR Bolacha doce.")
          Escreval("DIGITE [3] CASO DESEJE COMPRAR bolacha integral.")
@@ -126,18 +155,26 @@ resp <- "SIM"
          caso 1
             Escreval("Digite quantos pacotes de bolacha tardicional você deseja:")
             leia(quant)
+            vet[i].produto <- "Bolacha Tradicional"
+            vet[i].preco <- quant  * 2
             total <- total + (quant * 2)
          caso 2
             Escreval("Digite quantos pacotes de bolacha doce você deseja:")
             leia(quant)
+            vet[i].produto <- "Bolacha Doce"
+            vet[i].preco <- quant  * 2.30
             total <- total + (quant * 2.30)
          caso 3
             Escreval("Digite quantos pacotes  de bolacha integral você deseja:")
             leia(quant)
+            vet[i].produto <- "Bolacha Integral"
+            vet[i].preco <- quant  * 2.50
             total <- total + (quant * 2.50)
          caso 4
             Escreval("Digite quantos pacotes  de bolacha agua e sal  você deseja:")
             leia(quant)
+            vet[i].produto <- "Bolacha Água e Sal"
+            vet[i].preco <- quant  * 2.70
             total <- total + (quant * 2.70)
          outrocaso
             Escreval("Talvez você tenha digitado errado.")
@@ -147,7 +184,7 @@ resp <- "SIM"
          limpatela
          //menu secundario para seleção do tipo do produto CASO SEJA torta.
          Escreval("=============================================================")
-         Escreval("--------------------------PÃES-------------------------------")
+         Escreval("--------------------------Tortas-------------------------------")
          Escreval("DIGITE [1] CASO DESEJE COMPRAR Torta alemã")
          Escreval("DIGITE [2] CASO DESEJE COMPRAR torta de limão.")
          leia(esc2)
@@ -156,10 +193,14 @@ resp <- "SIM"
          caso 1
             Escreval("Digite quantas tortas alemãs você deseja:")
             leia(quant)
+            vet[i].produto <- "Torta alemã"
+            vet[i].preco <- quant  * 30
             total <- total + (quant * 30)
          caso 2
             Escreval("Digite quantas tortas de limão você deseja:")
             leia(quant)
+            vet[i].produto <- "Torta de Limão"
+            vet[i].preco <- quant  * 28.50
             total <- total + (quant * 28.50)
          outrocaso
             Escreval("Talvez você tenha digitado errado.")
@@ -169,7 +210,7 @@ resp <- "SIM"
          limpatela
          //menu secundario para seleção do tipo do produto CASO SEJA Outros.
          Escreval("=============================================================")
-         Escreval("--------------------------PÃES-------------------------------")
+         Escreval("--------------------------Outros-------------------------------")
          Escreval("DIGITE [1] CASO DESEJE COMPRAR macarrão")
          Escreval("DIGITE [2] CASO DESEJE COMPRAR arroz.")
          leia(esc2)
@@ -178,10 +219,14 @@ resp <- "SIM"
          caso 1
             Escreval("Digite quantos pacotes de macarrão você deseja:")
             leia(quant)
+            vet[i].produto <- "Macarrão"
+            vet[i].preco <- quant  * 2.15
             total <- total + (quant * 2.15)
          caso 2
             Escreval("Digite quantos pacotes de arroz você deseja:")
             leia(quant)
+            vet[i].produto <- "Arroz"
+            vet[i].preco <- quant  * 4.50
             total <- total + (quant * 4.50)
          outrocaso
             Escreval("Talvez você tenha digitado errado.")
@@ -194,6 +239,7 @@ resp <- "SIM"
       ESCREVAL("Digite [sim] caso deseje continuar:")
       Escreval("Caso não digite não:")
       leia(resp)
+      i <- i+1
    fimenquanto
    limpatela
    Escreval("O total da compra foi: RS", total:4:2)
@@ -205,12 +251,24 @@ resp <- "SIM"
    leia(esc3)
    escolha (esc3)
    caso 1
+        para cont de 1 ate (i - 1) faca
+             Escreval(vet[cont].produto," RS",vet[cont].preco)
+        fimpara
          Escreval("TOTAL: R$",total, " Pagar no cartão de crédito:")
    caso 2
+         para cont de 1 ate (i - 1) faca
+             Escreval(vet[cont].produto," RS",vet[cont].preco)
+        fimpara
          Escreval("TOTAL: R$",total, " Pagar no cartão de débito:")
    caso 3
+         para cont de 1 ate (i - 1) faca
+             Escreval(vet[cont].produto," RS",vet[cont].preco)
+        fimpara
          Escreval("TOTAL: R$",total, " Transferir valor via pix:")
    caso 4
+         para cont de 1 ate (i - 1) faca
+             Escreval(vet[cont].produto," RS",vet[cont].preco)
+        fimpara
          Escreval("TOTAL: R$",total, " Pagar em dinheiro a vista:")
    outrocaso
          Escreval("Opção inválida:")
