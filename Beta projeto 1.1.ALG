@@ -10,13 +10,13 @@ Var
    resp, hora :caractere
    total, quant : real
    esc1, esc2, esc3,i,cont: inteiro
-   vet:vetor[1..3] de nota_Fiscal
+   vet:vetor[1..20] de nota_Fiscal
 Inicio
 resp <- "SIM"
 i <- 1
    Escreval("==================================================")
    Escreval("-----------------Seja bem vindo!------------------")
-   Enquanto (resp = "SIM") ou (resp = "sim") ou (resp = "s") ou (resp ="s") ou (i <=3 )faca
+   Enquanto (resp = "SIM") ou (resp = "sim") ou (resp = "s") ou (resp ="s") ou (i <=1 )faca
    limpatela
       // Menu inicial para seleção do produto
       Escreval("DIGITE [1] CASO DESEJE COMPRAR PÃO.")
@@ -125,7 +125,7 @@ i <- 1
             vet[i].preco <- (quant /1000) * 27.30
             total <- total + ((quant / 1000)* 27.30)
          caso 2
-            Escreval(o"Digite a quantidade em gramas de presunto Perdigão você deseja:")
+            Escreval("Digite a quantidade em gramas de presunto Perdigão você deseja:")
             leia(quant)
             vet[i].produto <- "Presunto Perdigão"
             vet[i].preco <- (quant /1000) * 26.90
@@ -246,7 +246,7 @@ i <- 1
    se (resp = "S") ou (resp ="s")entao
       Escreval("Digite o horário:")
       leia(hora)
-   fimse
+
    limpatela
    //Forma de Pagamento
    Escreval("O total da compra foi: RS", total:4:2)
@@ -258,36 +258,76 @@ i <- 1
    leia(esc3)
    //Nota FISCAL
    escolha (esc3)
+   limpatela
    caso 1
         para cont de 1 ate (i - 1) faca
-             Escreval(vet[cont].produto," RS",vet[cont].preco)
+             Escreval(vet[cont].produto," RS",vet[cont].preco:4:2)
         fimpara
-         Escreval("TOTAL: R$",total, " Pagar no cartão de crédito:")
+         Escreval("TOTAL: R$",total:2:2, " Pagar no cartão de crédito:")
          Escreval("Seu pedido estara a sua espera as ",hora)
    caso 2
          para cont de 1 ate (i - 1) faca
-             Escreval(vet[cont].produto," RS",vet[cont].preco)
+             Escreval(vet[cont].produto," RS",vet[cont].preco:4:2)
         fimpara
-         Escreval("TOTAL: R$",total, " Pagar no cartão de débito:")
+         Escreval("TOTAL: R$",total:2:2, " Pagar no cartão de débito:")
          Escreval("Seu pedido estara a sua espera as ",hora)
    caso 3
          para cont de 1 ate (i - 1) faca
-             Escreval(vet[cont].produto," RS",vet[cont].preco)
+             Escreval(vet[cont].produto," RS",vet[cont].preco:4:2)
         fimpara
-         Escreval("TOTAL: R$",total, " Transferir valor via pix")
+         Escreval("TOTAL: R$",total:2:2, " Transferir valor via pix")
          Escreval("Seu pedido estara a sua espera as ",hora)
    caso 4
          para cont de 1 ate (i - 1) faca
-             Escreval(vet[cont].produto," RS",vet[cont].preco)
+             Escreval(vet[cont].produto," RS",vet[cont].preco:4:2)
         fimpara
-         Escreval("TOTAL: R$",total, " Pagar em dinheiro a vista")
+         Escreval("TOTAL: R$",total:2:2, " Pagar em dinheiro a vista")
          Escreval("Seu pedido estara a sua espera as ",hora)
    outrocaso
          Escreval("Opção inválida:")
          para cont de 1 ate (i - 1) faca
-             Escreval(vet[cont].produto," RS",vet[cont].preco)
+             Escreval(vet[cont].produto," RS",vet[cont].preco:4:2)
         fimpara
-         Escreval("TOTAL: R$",total, " Opção inválida, escolher forma de pagamento no local.")
+         Escreval("TOTAL: R$",total:4:2, " Opção inválida, escolher forma de pagamento no local.")
          Escreval("Seu pedido estara a sua espera as ",hora)
    fimescolha
+   senao
+   Escreval("O total da compra foi: RS", total:4:2)
+   Escreval("====================FORMA DE PAGAMENTO===============")
+   Escreval("DIGITE[1] CASO A FORMA DE PAGAMENTO SEJA CARTÃO DE CRÉDITO.")
+   Escreval("DIGITE[2] CASO A FORMA DE PAGAMENTO SEJA CARTÃO DE DÉBITO.")
+   Escreval("DIGITE[3] CASO A FORMA DE PAGAMENTO SEJA PIX.")
+   Escreval("DIGITE[4] CASO A FORMA DE PAGAMENTO SEJA À VISTA.")
+   leia(esc3)
+   //Nota FISCAL
+   escolha (esc3)
+   limpatela
+   caso 1
+        para cont de 1 ate (i - 1) faca
+             Escreval(vet[cont].produto," RS",vet[cont].preco:4:2)
+        fimpara
+         Escreval("TOTAL: R$",total:2:2, " Pagar no cartão de crédito:")
+   caso 2
+         para cont de 1 ate (i - 1) faca
+             Escreval(vet[cont].produto," RS",vet[cont].preco:4:2)
+        fimpara
+         Escreval("TOTAL: R$",total:2:2, " Pagar no cartão de débito:")
+   caso 3
+         para cont de 1 ate (i - 1) faca
+             Escreval(vet[cont].produto," RS",vet[cont].preco:4:2)
+        fimpara
+         Escreval("TOTAL: R$",total:2:2, " Transferir valor via pix")
+   caso 4
+         para cont de 1 ate (i - 1) faca
+             Escreval(vet[cont].produto," RS",vet[cont].preco:4:2)
+        fimpara
+         Escreval("TOTAL: R$",total:2:2, " Pagar em dinheiro a vista")
+   outrocaso
+         Escreval("Opção inválida:")
+         para cont de 1 ate (i - 1) faca
+             Escreval(vet[cont].produto," RS",vet[cont].preco:4:2)
+        fimpara
+         Escreval("TOTAL: R$",total:4:2, " Opção inválida, escolher forma de pagamento no local.")
+   fimescolha
+   fimse
  Fimalgoritmo
