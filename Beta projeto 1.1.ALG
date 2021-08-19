@@ -235,6 +235,7 @@ resp <- "SIM"
       outrocaso
          Escreval("Talvez você tenha digitado errado.")
          Escreval("Valor inválido.")
+         i <- i - 1
       fimescolha
       ESCREVAL("Digite [sim] caso deseje continuar:")
       Escreval("Caso não digite não:")
