@@ -13,10 +13,10 @@ Var
    vet:vetor[1..20] de nota_Fiscal
 Inicio
 resp <- "SIM"
-i <- 1
    Escreval("==================================================")
    Escreval("-----------------Seja bem vindo!------------------")
-   Enquanto (resp = "SIM") ou (resp = "sim") ou (resp = "s") ou (resp ="s") ou (i <=1 )faca
+   repita
+    i <- i + 1
    limpatela
       // Menu inicial para seleção do produto
       Escreval("DIGITE [1] CASO DESEJE COMPRAR PÃO.")
@@ -239,11 +239,10 @@ i <- 1
       ESCREVAL("Digite [sim] caso deseje continuar:")
       Escreval("Caso não digite não:")
       leia(resp)
-      i <- i+1
-   fimenquanto
+    ate (resp = "nao") ou (resp = "não") ou (resp ="n")
    Escreval("Você deseja ir definir um horário para nusca do pedido?[S/N]")
    leia(resp)
-   se (resp = "S") ou (resp ="s")entao
+   se (resp = "sim") ou (resp ="s")entao
       Escreval("Digite o horário:")
       leia(hora)
 
@@ -260,32 +259,32 @@ i <- 1
    escolha (esc3)
    limpatela
    caso 1
-        para cont de 1 ate (i - 1) faca
+        para cont de 1 ate (i) faca
              Escreval(vet[cont].produto," RS",vet[cont].preco:4:2)
         fimpara
          Escreval("TOTAL: R$",total:2:2, " Pagar no cartão de crédito:")
          Escreval("Seu pedido estara a sua espera as ",hora)
    caso 2
-         para cont de 1 ate (i - 1) faca
+         para cont de 1 ate (i) faca
              Escreval(vet[cont].produto," RS",vet[cont].preco:4:2)
         fimpara
          Escreval("TOTAL: R$",total:2:2, " Pagar no cartão de débito:")
          Escreval("Seu pedido estara a sua espera as ",hora)
    caso 3
-         para cont de 1 ate (i - 1) faca
+         para cont de 1 ate (i) faca
              Escreval(vet[cont].produto," RS",vet[cont].preco:4:2)
         fimpara
          Escreval("TOTAL: R$",total:2:2, " Transferir valor via pix")
          Escreval("Seu pedido estara a sua espera as ",hora)
    caso 4
-         para cont de 1 ate (i - 1) faca
+         para cont de 1 ate (i) faca
              Escreval(vet[cont].produto," RS",vet[cont].preco:4:2)
         fimpara
          Escreval("TOTAL: R$",total:2:2, " Pagar em dinheiro a vista")
          Escreval("Seu pedido estara a sua espera as ",hora)
    outrocaso
          Escreval("Opção inválida:")
-         para cont de 1 ate (i - 1) faca
+         para cont de 1 ate (i) faca
              Escreval(vet[cont].produto," RS",vet[cont].preco:4:2)
         fimpara
          Escreval("TOTAL: R$",total:4:2, " Opção inválida, escolher forma de pagamento no local.")
@@ -303,28 +302,28 @@ i <- 1
    escolha (esc3)
    limpatela
    caso 1
-        para cont de 1 ate (i - 1) faca
+        para cont de 1 ate (i) faca
              Escreval(vet[cont].produto," RS",vet[cont].preco:4:2)
         fimpara
          Escreval("TOTAL: R$",total:2:2, " Pagar no cartão de crédito:")
    caso 2
-         para cont de 1 ate (i - 1) faca
+         para cont de 1 ate (i) faca
              Escreval(vet[cont].produto," RS",vet[cont].preco:4:2)
         fimpara
          Escreval("TOTAL: R$",total:2:2, " Pagar no cartão de débito:")
    caso 3
-         para cont de 1 ate (i - 1) faca
+         para cont de 1 ate (i) faca
              Escreval(vet[cont].produto," RS",vet[cont].preco:4:2)
         fimpara
          Escreval("TOTAL: R$",total:2:2, " Transferir valor via pix")
    caso 4
-         para cont de 1 ate (i - 1) faca
+         para cont de 1 ate (i) faca
              Escreval(vet[cont].produto," RS",vet[cont].preco:4:2)
         fimpara
-         Escreval("TOTAL: R$",total:2:2, " Pagar em dinheiro a vista")
+         Escreval("TOTAL: R$",total:2:2, " Pagar em dinheiro à vista")
    outrocaso
          Escreval("Opção inválida:")
-         para cont de 1 ate (i - 1) faca
+         para cont de 1 ate (i) faca
              Escreval(vet[cont].produto," RS",vet[cont].preco:4:2)
         fimpara
          Escreval("TOTAL: R$",total:4:2, " Opção inválida, escolher forma de pagamento no local.")
